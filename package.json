@@ -1,0 +1,34 @@
+{
+  "name": "bulk-delete-repo",
+  "version": "1.0.0",
+  "description": "Delete your GitHub repos in bulk!",
+  "tags": [
+    "github",
+    "delete",
+    "repos",
+    "bulk",
+    "batch"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "debug": "node --inspect -r ts-node/register index.ts",
+    "build": "tsc",
+    "prepublish": "chmod +x index.js"
+  },
+  "bin": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "@types/node": "^16.11.12",
+    "enquirer": "^2.3.6",
+    "listr2": "^3.13.5",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.3"
+  },
+  "devDependencies": {
+    "ndb": "^1.1.5"
+  }
+}
