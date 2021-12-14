@@ -35,13 +35,20 @@ const main = async () => {
         ctx.targets = await task.prompt({
           type: "MultiSelect",
           message: "Please select repositories you want to delete",
-          choices: ctx.repos.map((repo) => {
-            const name = `${repo.owner.login}/${repo.name}`;
-            return {
-              name,
-              message: `${name} ${repo.private ? "(private)" : ""}`,
-            };
-          }),
+          choices: ctx.repos
+            .sort((aRepo, bRepo) => {
+              const aName = `${aRepo.owner.login}/${aRepo.name}`;
+              const bName = `${bRepo.owner.login}/${bRepo.name}`;
+
+              return aName.localeCompare(bName);
+            })
+            .map((repo) => {
+              const name = `${repo.owner.login}/${repo.name}`;
+              return {
+                name,
+                message: `${name} ${repo.private ? "(private)" : ""}`,
+              };
+            }),
         });
       },
     },
