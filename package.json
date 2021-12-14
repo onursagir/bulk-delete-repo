@@ -1,6 +1,6 @@
 {
   "name": "bulk-delete-repo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Delete your GitHub repos in bulk!",
   "tags": [
     "github",
